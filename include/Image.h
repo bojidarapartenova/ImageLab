@@ -22,4 +22,11 @@ public:
     void addFilter(Filter *filter);
     void clearFilters();
     void runFilters();
+
+    int getWidth() const;
+    int getHeight() const;
+    int getMaxVal() const;
+
+    int getPixel(int x, int y) const;
+    void setPixel(int x, int y, int newVal);
 };
