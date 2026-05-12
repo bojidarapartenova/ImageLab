@@ -54,3 +54,14 @@ void PBMImage::save(const String &customPath) const
     }
     file.close();
 }
+
+Pixel PBMImage::getPixel(int x, int y) const
+{
+    int value = pixels[y][x] * 255;
+    return Pixel(value, value, value);
+}
+
+void PBMImage::setPixel(int x, int y, const Pixel &p)
+{
+    pixels[y][x] = (p.r > 127) ? 1 : 0;
+}

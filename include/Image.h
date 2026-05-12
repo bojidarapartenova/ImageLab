@@ -32,8 +32,8 @@ public:
 
     int getWidth() const;
     int getHeight() const;
-    virtual int getMaxVal() const;
+    int getMaxVal() const;
 
-    virtual int getPixel(int x, int y) const;
-    virtual void setPixel(int x, int y, int value);
+    virtual Pixel getPixel(int x, int y) const = 0;
+    virtual void setPixel(int x, int y, const Pixel &p) = 0;
 };

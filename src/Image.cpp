@@ -16,7 +16,7 @@ void Image::clearFilters()
 {
     while (!pendingFilters.isEmpty())
     {
-        pendingFilters.pop_at(pendingFilters.getSize());
+        pendingFilters.pop_at(0);
     }
 }
 
@@ -28,4 +28,19 @@ void Image::runFilters()
     }
 
     clearFilters();
+}
+
+int Image::getWidth() const
+{
+    return width;
+}
+
+int Image::getHeight() const
+{
+    return height;
+}
+
+int Image::getMaxVal() const
+{
+    return maxVal;
 }

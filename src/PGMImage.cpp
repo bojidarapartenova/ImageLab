@@ -30,7 +30,7 @@ void PGMImage::load()
 
 void PGMImage::save(const String &customPath) const
 {
-    const char *path = (customPath.getData() > 0) ? customPath.getData() : filePath.getData();
+    const char *path = (customPath.getSize() > 0) ? customPath.getData() : filePath.getData();
 
     std::ofstream file(path);
     if (!file.is_open())
@@ -56,4 +56,15 @@ void PGMImage::save(const String &customPath) const
         file << "\n";
     }
     file.close();
+}
+
+Pixel PGMImage::getPixel(int x, int y) const
+{
+    int value = pixels[y][x];
+    return Pixel(value, value, value);
+}
+
+void PGMImage::setPixel(int x, int y, const Pixel &p)
+{
+    pixels[y][x] = p.r;
 }

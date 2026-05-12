@@ -10,8 +10,13 @@ void NegativeFilter::apply(Image &image) const
     {
         for (int x = 0; x < width; x++)
         {
-            int currentPixel = image.getPixel(x, y);
-            image.setPixel(x, y, maxVal - currentPixel);
+            Pixel p = image.getPixel(x, y);
+
+            p.r = maxVal - p.r;
+            p.g = maxVal - p.g;
+            p.b = maxVal - p.b;
+
+            image.setPixel(x, y, p);
         }
     }
 }
