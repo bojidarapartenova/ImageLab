@@ -33,7 +33,7 @@ void PBMImage::load()
 
 void PBMImage::save(const String &customPath) const
 {
-    const char *path = (customPath.getData()) ? (customPath.getData()) : filePath.getData();
+    const char *path = (customPath.getSize() > 0) ? (customPath.getData()) : filePath.getData();
     std::ofstream file(path);
 
     if (!file.is_open())

@@ -1,7 +1,7 @@
-#include "PGMImage.h"
+#include "PPMImage.h"
 #include <fstream>
 
-void PGMImage::load()
+void PPMImage::load()
 {
     std::ifstream file(filePath.getData());
     if (!file.is_open())
@@ -13,24 +13,23 @@ void PGMImage::load()
     file >> buffer;
 
     file >> width >> height >> maxVal;
-
     for (int y = 0; y < height; y++)
     {
-        Vector<int> row;
+        Vector<Pixel> row;
         for (int x = 0; x < width; x++)
         {
-            int pixel;
-            file >> pixel;
-            row.push_back(pixel);
+            int r, g, b;
+            file >> r >> g >> b;
+            row.push_back(Pixel(r, g, b));
         }
         pixels.push_back(row);
     }
     file.close();
 }
 
-void PGMImage::save(const String &customPath) const
+void PPMImage::save(const String &customPath) const
 {
-    const char *path = (customPath.getData() > 0) ? customPath.getData() : filePath.getData();
+    const char *path = (customPath.getSize() > 0) ? customPath.getData() : filePath.getData();
 
     std::ofstream file(path);
     if (!file.is_open())
@@ -38,7 +37,7 @@ void PGMImage::save(const String &customPath) const
         return;
     }
 
-    file << "P2" << "\n";
+    file << "P3" << "\n";
     file << width << " " << height << "\n";
     file << maxVal << "\n";
 
@@ -46,11 +45,12 @@ void PGMImage::save(const String &customPath) const
     {
         for (int x = 0; x < width; x++)
         {
-            file << pixels[y][x];
+            const Pixel &p = pixels[y][x];
+            file << p.r << " " << p.g << " " << p.b;
 
             if (x < width - 1)
             {
-                file << "";
+                file << " ";
             }
         }
         file << "\n";

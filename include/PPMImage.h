@@ -1,15 +1,15 @@
 #include "String.h"
 #include "Vector.h"
-#include "Image.h"
 #include "Filter.h"
+#include "Image.h"
 
-class PBMImage : public Image
+class PPMImage : public Image
 {
 protected:
-    Vector<Vector<int>> pixels;
+    Vector<Vector<Pixel>> pixels;
 
 public:
-    PBMImage(const String &path);
+    PPMImage(const String &path) : Image(path) {}
 
     void load() override;
     void save(const String &customPath) const override;

@@ -13,8 +13,4 @@ public:
 
     void load() override;
     void save(const String &customPath) const override;
-
-    int getPixel(int x, int y) const override;
-    void setPixel(int x, int y, int value) override;
-    int getMaxVal() const override;
 };
