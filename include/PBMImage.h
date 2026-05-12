@@ -1,0 +1,20 @@
+#include "String.h"
+#include "Vector.h"
+#include "Image.h"
+#include "Filter.h"
+
+class PBMImage : public Image
+{
+protected:
+    Vector<Vector<int>> pixels;
+
+public:
+    PBMImage(const String &path);
+
+    void load() override;
+    void save(const String &customPath) const override;
+
+    int getPixel(int x, int y) const override;
+    void setPixel(int x, int y, int value) override;
+    int getMaxVal() const override;
+};
