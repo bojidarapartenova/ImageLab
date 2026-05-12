@@ -1,5 +1,6 @@
 #include "String.h"
 #include "Vector.h"
+#include "Filter.h"
 
 class Filter;
 
@@ -25,8 +26,8 @@ public:
 
     int getWidth() const;
     int getHeight() const;
-    int getMaxVal() const;
+    virtual int getMaxVal() const;
 
-    int getPixel(int x, int y) const;
-    void setPixel(int x, int y, int newVal);
+    virtual int getPixel(int x, int y) const;
+    virtual void setPixel(int x, int y, int value);
 };
