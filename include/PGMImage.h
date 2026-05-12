@@ -9,10 +9,10 @@ protected:
     Vector<Vector<int>> pixels;
 
 public:
-    PGMImage(const String &path);
+    PGMImage(const String &path) : Image(path) {}
 
     void load() override;
-    void save(const String &path) const override;
+    void save(const String &customPath) const override;
 
     int getPixel(int x, int y) const override;
     void setPixel(int x, int y, int value) override;

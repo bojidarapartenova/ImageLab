@@ -7,7 +7,7 @@ class Filter;
 class Image
 {
 protected:
-    String &path;
+    String filePath;
     int width;
     int height;
     int maxVal;
@@ -15,7 +15,7 @@ protected:
 
 public:
     Image(const String &path);
-    virtual ~Image();
+    virtual ~Image() = default;
 
     virtual void load() = 0;
     virtual void save(const String &path) const = 0;
