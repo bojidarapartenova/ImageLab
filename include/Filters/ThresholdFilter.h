@@ -1,3 +1,6 @@
+#ifndef THRESHOLDFILTER_H
+#define THRESHOLDFILTER_H
+
 #include "String.h"
 #include "Vector.h"
 #include "Image.h"
@@ -15,3 +18,5 @@ public:
 
     String getName() const override;
 };
+
+#endif

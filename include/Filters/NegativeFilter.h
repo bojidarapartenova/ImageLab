@@ -1,3 +1,6 @@
+#ifndef NEGATIVEFILTER_H
+#define NEGATIVEFILTER_H
+
 #include "Image.h"
 #include "Filter.h"
 
@@ -8,3 +11,5 @@ public:
 
     String getName() const override;
 };
+
+#endif

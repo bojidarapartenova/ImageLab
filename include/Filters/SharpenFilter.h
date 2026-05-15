@@ -1,3 +1,6 @@
+#ifndef SHARPENFILTER_H
+#define SHARPENFILTER_H
+
 #include "String.h"
 #include "Vector.h"
 #include "Filter.h"
@@ -9,3 +12,5 @@ class SharpenFilter : public Filter
 
     String getName() const override;
 };
+
+#endif

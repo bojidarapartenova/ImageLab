@@ -1,6 +1,8 @@
-#include "String.h"
-#include "Vector.h"
-#include "Filter.h"
+#ifndef IMAGE_H
+#define IMAGE_H
+
+#include "Structures/String.h"
+#include "Structures/Vector.h"
 
 class Filter;
 
@@ -37,3 +39,5 @@ public:
     virtual Pixel getPixel(int x, int y) const = 0;
     virtual void setPixel(int x, int y, const Pixel &p) = 0;
 };
+
+#endif

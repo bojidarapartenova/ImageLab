@@ -1,3 +1,6 @@
+#ifndef CONTRASTSTRETCHINGFILTER_H
+#define CONTRASTSTRETCHINGFILTER_H
+
 #include "String.h"
 #include "Vector.h"
 #include "Filter.h"
@@ -9,3 +12,5 @@ class ContrastStretching : public Filter
 
     String getName() const override;
 };
+
+#endif

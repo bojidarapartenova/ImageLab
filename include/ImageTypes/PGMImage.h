@@ -1,3 +1,6 @@
+#ifndef PGMIMAGE_H
+#define PGMIMAGE_H
+
 #include "String.h"
 #include "Vector.h"
 #include "Filter.h"
@@ -17,3 +20,5 @@ public:
     Pixel getPixel(int x, int y) const override;
     void setPixel(int x, int y, const Pixel &p) override;
 };
+
+#endif

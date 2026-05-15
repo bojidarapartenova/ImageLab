@@ -1,3 +1,6 @@
+#ifndef PPMIMAGE_H
+#define PPMIMAGE_H
+
 #include "String.h"
 #include "Vector.h"
 #include "Filter.h"
@@ -14,3 +17,5 @@ public:
     void load() override;
     void save(const String &customPath) const override;
 };
+
+#endif
