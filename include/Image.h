@@ -1,10 +1,9 @@
 #ifndef IMAGE_H
 #define IMAGE_H
 
-#include "Structures/String.h"
-#include "Structures/Vector.h"
-
-class Filter;
+#include "MyString.h"
+#include "Vector.h"
+#include "Filter.h"
 
 struct Pixel
 {
@@ -31,11 +30,14 @@ public:
     void addFilter(Filter *filter);
     void clearFilters();
     void runFilters();
+    bool removeFilterAt(int index);
+    void printFilters() const;
 
     int getWidth() const;
     int getHeight() const;
     int getMaxVal() const;
     String getPath() const;
+    int getPendingFiltersCount() const;
 
     virtual Pixel getPixel(int x, int y) const = 0;
     virtual void setPixel(int x, int y, const Pixel &p) = 0;

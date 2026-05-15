@@ -1,3 +1,6 @@
+#ifndef VECTOR_H
+#define VECTOR_H
+
 #include <iostream>
 
 template <typename T>
@@ -173,3 +176,5 @@ inline bool Vector<T>::isEmpty() const
 {
     return size == 0;
 }
+
+#endif

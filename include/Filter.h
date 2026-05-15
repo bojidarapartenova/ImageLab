@@ -1,7 +1,7 @@
 #ifndef FILTER_H
 #define FILTER_H
 
-#include "Structures/String.h"
+#include "MyString.h"
 
 class Image;
 

@@ -1,10 +1,8 @@
 #ifndef SOBELFILTER_H
 #define SOBELFILTER_H
 
-#include "String.h"
-#include "Vector.h"
-#include "Image.h"
 #include "Filter.h"
+#include "Image.h"
 
 class SobelFilter : public Filter
 {

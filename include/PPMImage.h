@@ -1,9 +1,6 @@
 #ifndef PPMIMAGE_H
 #define PPMIMAGE_H
 
-#include "String.h"
-#include "Vector.h"
-#include "Filter.h"
 #include "Image.h"
 
 class PPMImage : public Image

@@ -1,4 +1,5 @@
-#include "String.h"
+#include "MyString.h"
+#include <iostream>
 
 void String::copyFrom(const String &other)
 {

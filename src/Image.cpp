@@ -36,6 +36,38 @@ void Image::runFilters()
     clearFilters();
 }
 
+bool Image::removeFilterAt(int index)
+{
+    if (index < 0 || index >= pendingFilters.getSize())
+    {
+        return false;
+    }
+
+    delete pendingFilters[index];
+    pendingFilters.pop_at(index);
+
+    return true;
+}
+
+void Image::printFilters() const
+{
+    if (pendingFilters.isEmpty())
+    {
+        std::cout << "no pending filters";
+        return;
+    }
+
+    for (size_t i = 0; i < pendingFilters.getSize(); i++)
+    {
+        std::cout << "[" << i << "] " << pendingFilters[i]->getName();
+
+        if (i < pendingFilters.getSize() - 1)
+        {
+            std::cout << ", ";
+        }
+    }
+}
+
 int Image::getWidth() const
 {
     return width;
@@ -54,4 +86,9 @@ int Image::getMaxVal() const
 String Image::getPath() const
 {
     return filePath;
+}
+
+int Image::getPendingFiltersCount() const
+{
+    return pendingFilters.getSize();
 }

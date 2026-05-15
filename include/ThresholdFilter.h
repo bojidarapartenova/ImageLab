@@ -1,10 +1,8 @@
 #ifndef THRESHOLDFILTER_H
 #define THRESHOLDFILTER_H
 
-#include "String.h"
-#include "Vector.h"
-#include "Image.h"
 #include "Filter.h"
+#include "Image.h"
 
 class ThresholdFilter : public Filter
 {

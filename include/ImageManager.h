@@ -1,8 +1,8 @@
 #ifndef IMAGEMANAGER_H
 #define IMAGEMANAGER_H
 
-#include "Structures/Vector.h"
-#include "Structures/String.h"
+#include "Vector.h"
+#include "MyString.h"
 #include "Image.h"
 
 class ImageManager

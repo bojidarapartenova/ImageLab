@@ -1,18 +1,15 @@
-#ifndef PBMIMAGE_H
-#define PBMIMAGE_H
+#ifndef PGMIMAGE_H
+#define PGMIMAGE_H
 
-#include "String.h"
-#include "Vector.h"
 #include "Image.h"
-#include "Filter.h"
 
-class PBMImage : public Image
+class PGMImage : public Image
 {
 protected:
     Vector<Vector<int>> pixels;
 
 public:
-    PBMImage(const String &path);
+    PGMImage(const String &path) : Image(path) {}
 
     void load() override;
     void save(const String &customPath) const override;

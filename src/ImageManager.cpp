@@ -2,16 +2,16 @@
 #include <cstring>
 #include <iostream>
 
-#include "ImageTypes/PPMImage.h"
-#include "ImageTypes/PGMImage.h"
-#include "ImageTypes/PBMImage.h"
+#include "PPMImage.h"
+#include "PGMImage.h"
+#include "PBMImage.h"
 
-#include "Filters/NegativeFilter.h"
-#include "Filters/BlurFilter.h"
-#include "Filters/SobelFilter.h"
-#include "Filters/SharpenFilter.h"
-#include "Filters/ThresholdFilter.h"
-#include "Filters/ContrastStretchingFilter.h"
+#include "NegativeFilter.h"
+#include "BlurFilter.h"
+#include "SobelFilter.h"
+#include "SharpenFilter.h"
+#include "ThresholdFilter.h"
+#include "ContrastStretchingFilter.h"
 
 static Image *createImageByExtension(const String &path)
 {
@@ -80,6 +80,10 @@ Filter *ImageManager::createFilterByName(const String &name) const
     {
         return new ContrastStretchingFilter();
     }
+    if (name == "threshold")
+    {
+        return new ThresholdFilter(150);
+    }
 
     return nullptr;
 }
@@ -112,5 +116,104 @@ void ImageManager::load(const String &path)
         delete newImg;
         std::cout << "Error: Image '" << path << "' not loaded." << std::endl;
         return;
+    }
+}
+
+void ImageManager::addFilter(const String &imageName, const String &filterType)
+{
+    int idx = findImageIndex(imageName);
+    if (idx == -1)
+    {
+        std::cout << "Error: Image '" << imageName << "' not loaded." << std::endl;
+        return;
+    }
+
+    Filter *f = createFilterByName(filterType);
+    if (f)
+    {
+        images[idx]->addFilter(f);
+        std::cout << "Added filter '" << filterType << "' to '" << imageName
+                  << "' (index " << images[idx]->getPendingFiltersCount() - 1 << ")" << std::endl;
+    }
+    else
+    {
+        std::cout << "Error: Unknown filter '" << filterType << "'" << std::endl;
+    }
+}
+
+void ImageManager::removeFilter(const String &imageName, int filterIdx)
+{
+    int idx = findImageIndex(imageName);
+
+    if (idx != -1 && images[idx]->removeFilterAt(filterIdx))
+    {
+        std::cout << "Removed filter " << filterIdx << " from " << imageName << std::endl;
+    }
+    else
+    {
+        std::cout << "Error: Could not remove filter." << std::endl;
+    }
+}
+
+void ImageManager::showFilters(const String &imageName) const
+{
+    int idx = findImageIndex(imageName);
+    if (idx != -1)
+    {
+        std::cout << "Filters for " << imageName << ": ";
+        images[idx]->printFilters();
+        std::cout << std::endl;
+    }
+}
+
+void ImageManager::showAllFilters() const
+{
+    for (size_t i = 0; i < images.getSize(); i++)
+    {
+        std::cout << "Filters for " << images[i]->getPath() << ": ";
+        images[i]->printFilters();
+        std::cout << std::endl;
+    }
+}
+
+void ImageManager::run(const String &imageName)
+{
+    int idx = findImageIndex(imageName);
+    if (idx != -1)
+    {
+        std::cout << "Running filters for " << imageName << "..." << std::endl;
+        images[idx]->runFilters();
+        images[idx]->save(imageName);
+    }
+}
+
+void ImageManager::runAll()
+{
+    std::cout << "Running pipeline for all " << images.getSize() << " image(s)..." << std::endl;
+    for (size_t i = 0; i < images.getSize(); i++)
+    {
+        std::cout << images[i]->getPath() << std::endl;
+        images[i]->runFilters();
+        images[i]->save(images[i]->getPath());
+    }
+}
+
+void ImageManager::save(const String &imageName, const String &outputName)
+{
+    int idx = findImageIndex(imageName);
+    if (idx != -1)
+    {
+        images[idx]->runFilters();
+        String path = (outputName == "") ? imageName : outputName;
+        images[idx]->save(path);
+        std::cout << "Saved: " << path << std::endl;
+    }
+}
+
+void ImageManager::clearAll()
+{
+    for (size_t i = 0; i < images.getSize(); i++)
+    {
+        delete images[i];
     }
 }

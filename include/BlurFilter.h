@@ -1,13 +1,12 @@
-#ifndef SHARPENFILTER_H
-#define SHARPENFILTER_H
+#ifndef BLURFILTER_H
+#define BLURFILTER_H
 
-#include "String.h"
-#include "Vector.h"
 #include "Filter.h"
 #include "Image.h"
 
-class SharpenFilter : public Filter
+class BlurFilter : public Filter
 {
+public:
     void apply(Image &image) const override;
 
     String getName() const override;
