@@ -35,6 +35,7 @@ public:
     int getWidth() const;
     int getHeight() const;
     int getMaxVal() const;
+    String getPath() const;
 
     virtual Pixel getPixel(int x, int y) const = 0;
     virtual void setPixel(int x, int y, const Pixel &p) = 0;

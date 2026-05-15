@@ -57,3 +57,13 @@ void PPMImage::save(const String &customPath) const
     }
     file.close();
 }
+
+Pixel PPMImage::getPixel(int x, int y) const
+{
+    return pixels[y][x];
+}
+
+void PPMImage::setPixel(int x, int y, const Pixel &p)
+{
+    pixels[y][x] = p;
+}

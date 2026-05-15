@@ -16,6 +16,9 @@ public:
 
     void load() override;
     void save(const String &customPath) const override;
+
+    virtual Pixel getPixel(int x, int y) const override;
+    virtual void setPixel(int x, int y, const Pixel &p) override;
 };
 
 #endif

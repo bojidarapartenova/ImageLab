@@ -1,4 +1,5 @@
 #include "Image.h"
+#include "Filter.h"
 
 Image::Image(const String &path) : filePath(path), width(0), height(0), maxVal(255)
 {
@@ -14,6 +15,11 @@ void Image::addFilter(Filter *filter)
 
 void Image::clearFilters()
 {
+    for (size_t i = 0; i < pendingFilters.getSize(); i++)
+    {
+        delete pendingFilters[i];
+    }
+
     while (!pendingFilters.isEmpty())
     {
         pendingFilters.pop_at(0);
@@ -43,4 +49,9 @@ int Image::getHeight() const
 int Image::getMaxVal() const
 {
     return maxVal;
+}
+
+String Image::getPath() const
+{
+    return filePath;
 }

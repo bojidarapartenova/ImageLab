@@ -6,7 +6,7 @@
 #include "Filter.h"
 #include "Image.h"
 
-class ContrastStretching : public Filter
+class ContrastStretchingFilter : public Filter
 {
     void apply(Image &image) const override;
 

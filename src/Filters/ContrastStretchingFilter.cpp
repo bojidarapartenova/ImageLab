@@ -1,6 +1,6 @@
 #include "ContrastStretchingFilter.h"
 
-void ContrastStretching::apply(Image &image) const
+void ContrastStretchingFilter::apply(Image &image) const
 {
     int width = image.getWidth();
     int height = image.getHeight();
@@ -74,7 +74,7 @@ void ContrastStretching::apply(Image &image) const
     }
 }
 
-String ContrastStretching::getName() const
+String ContrastStretchingFilter::getName() const
 {
     return "contrast stretching";
 }
