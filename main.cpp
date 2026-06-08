@@ -33,11 +33,13 @@ int main()
         if (cmd == "load")
         {
             std::string path;
-            if (ss >> path)
+            bool loaded = false;
+            while (ss >> path)
             {
                 manager.load(path.c_str());
+                loaded = true;
             }
-            else
+            if (!loaded)
             {
                 std::cout << "Error: Missing path for 'load' command." << std::endl;
             }
@@ -47,7 +49,12 @@ int main()
             std::string imgName, filterType;
             if (ss >> imgName >> filterType)
             {
-                manager.addFilter(imgName.c_str(), filterType.c_str());
+                int sobelThreshold = -1;
+                if (filterType == "sobel")
+                {
+                    ss >> sobelThreshold;
+                }
+                manager.addFilter(imgName.c_str(), filterType.c_str(), sobelThreshold);
             }
             else
             {
@@ -102,13 +109,14 @@ int main()
         else if (cmd == "save")
         {
             std::string imgName, outName;
-            if (ss >> imgName >> outName)
+            if (ss >> imgName)
             {
+                ss >> outName;
                 manager.save(imgName.c_str(), outName.c_str());
             }
             else
             {
-                std::cout << "Error: Usage: save <image_name> <output_name>" << std::endl;
+                std::cout << "Error: Usage: save <image_name> [output_name]" << std::endl;
             }
         }
         else if (cmd == "quit")

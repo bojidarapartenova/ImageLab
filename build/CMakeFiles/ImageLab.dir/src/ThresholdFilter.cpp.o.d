@@ -816,4 +816,4 @@ CMakeFiles/ImageLab.dir/src/ThresholdFilter.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/print \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Image.h \
-  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.h
+  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.hpp

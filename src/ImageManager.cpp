@@ -17,31 +17,20 @@ static Image *createImageByExtension(const String &path)
 {
     const char *rawPath = path.getData();
     size_t len = 0;
-
     while (rawPath[len] != '\0')
-    {
         len++;
-    }
 
     if (len < 4)
-    {
         return nullptr;
-    }
 
     const char *ext = rawPath + (len - 4);
 
     if (std::strcmp(ext, ".ppm") == 0)
-    {
         return new PPMImage(path);
-    }
     if (std::strcmp(ext, ".pgm") == 0)
-    {
         return new PGMImage(path);
-    }
     if (std::strcmp(ext, ".pbm") == 0)
-    {
         return new PBMImage(path);
-    }
 
     return nullptr;
 }
@@ -49,16 +38,12 @@ static Image *createImageByExtension(const String &path)
 int ImageManager::findImageIndex(const String &name) const
 {
     for (size_t i = 0; i < images.getSize(); i++)
-    {
         if (images[i]->getPath() == name)
-        {
-            return i;
-        }
-    }
+            return (int)i;
     return -1;
 }
 
-Filter *ImageManager::createFilterByName(const String &name) const
+Filter *ImageManager::createFilterByName(const String &name, int sobelThreshold) const
 {
     if (name == "negative")
     {
@@ -70,7 +55,7 @@ Filter *ImageManager::createFilterByName(const String &name) const
     }
     if (name == "sobel")
     {
-        return new SobelFilter();
+        return new SobelFilter(sobelThreshold);
     }
     if (name == "sharpen")
     {
@@ -84,7 +69,6 @@ Filter *ImageManager::createFilterByName(const String &name) const
     {
         return new ThresholdFilter(150);
     }
-
     return nullptr;
 }
 
@@ -97,11 +81,16 @@ ImageManager::~ImageManager()
 
 void ImageManager::load(const String &path)
 {
-    Image *newImg = createImageByExtension(path);
+    if (findImageIndex(path) != -1)
+    {
+        std::cout << "Error: '" << path << "' is already loaded." << std::endl;
+        return;
+    }
 
+    Image *newImg = createImageByExtension(path);
     if (!newImg)
     {
-        std::cout << "Unsupported file format" << std::endl;
+        std::cout << "Unsupported file format: " << path << std::endl;
         return;
     }
 
@@ -114,8 +103,7 @@ void ImageManager::load(const String &path)
     catch (...)
     {
         delete newImg;
-        std::cout << "Error: Image '" << path << "' not loaded." << std::endl;
-        return;
+        std::cout << "Error: Could not load '" << path << "'." << std::endl;
     }
 }
 
@@ -128,11 +116,11 @@ void ImageManager::addFilter(const String &imageName, const String &filterType, 
         return;
     }
 
-    Filter *f = createFilterByName(filterType);
+    Filter *f = createFilterByName(filterType, sobelThreshold);
     if (f)
     {
         images[idx]->addFilter(f);
-        std::cout << "Added filter '" << filterType << "' to '" << imageName
+        std::cout << "Added filter '" << f->getName() << "' to '" << imageName
                   << "' (index " << images[idx]->getPendingFiltersCount() - 1 << ")" << std::endl;
     }
     else
@@ -144,7 +132,6 @@ void ImageManager::addFilter(const String &imageName, const String &filterType, 
 void ImageManager::removeFilter(const String &imageName, int filterIdx)
 {
     int idx = findImageIndex(imageName);
-
     if (idx != -1 && images[idx]->removeFilterAt(filterIdx))
     {
         std::cout << "Removed filter " << filterIdx << " from " << imageName << std::endl;
@@ -164,10 +151,19 @@ void ImageManager::showFilters(const String &imageName) const
         images[idx]->printFilters();
         std::cout << std::endl;
     }
+    else
+    {
+        std::cout << "Error: Image '" << imageName << "' not loaded." << std::endl;
+    }
 }
 
 void ImageManager::showAllFilters() const
 {
+    if (images.isEmpty())
+    {
+        std::cout << "No images loaded." << std::endl;
+        return;
+    }
     for (size_t i = 0; i < images.getSize(); i++)
     {
         std::cout << "Filters for " << images[i]->getPath() << ": ";
@@ -184,17 +180,28 @@ void ImageManager::run(const String &imageName)
         std::cout << "Running filters for " << imageName << "..." << std::endl;
         images[idx]->runFilters();
         images[idx]->save(imageName);
+        std::cout << "Saved: " << imageName << std::endl;
+    }
+    else
+    {
+        std::cout << "Error: Image '" << imageName << "' not loaded." << std::endl;
     }
 }
 
 void ImageManager::runAll()
 {
+    if (images.isEmpty())
+    {
+        std::cout << "No images loaded." << std::endl;
+        return;
+    }
     std::cout << "Running pipeline for all " << images.getSize() << " image(s)..." << std::endl;
     for (size_t i = 0; i < images.getSize(); i++)
     {
-        std::cout << images[i]->getPath() << std::endl;
+        std::cout << ">> " << images[i]->getPath() << std::endl;
         images[i]->runFilters();
         images[i]->save(images[i]->getPath());
+        std::cout << "Saved: " << images[i]->getPath() << std::endl;
     }
 }
 
@@ -208,6 +215,10 @@ void ImageManager::save(const String &imageName, const String &outputName)
         images[idx]->save(path);
         std::cout << "Saved: " << path << std::endl;
     }
+    else
+    {
+        std::cout << "Error: Image '" << imageName << "' not loaded." << std::endl;
+    }
 }
 
 void ImageManager::clearAll()
@@ -215,5 +226,10 @@ void ImageManager::clearAll()
     for (size_t i = 0; i < images.getSize(); i++)
     {
         delete images[i];
+    }
+
+    while (!images.isEmpty())
+    {
+        images.pop_at(0);
     }
 }

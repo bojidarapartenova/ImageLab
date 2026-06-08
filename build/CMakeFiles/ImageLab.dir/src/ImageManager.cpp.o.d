@@ -1,7 +1,7 @@
 CMakeFiles/ImageLab.dir/src/ImageManager.cpp.o: \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/src/ImageManager.cpp \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/ImageManager.h \
-  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.h \
+  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \

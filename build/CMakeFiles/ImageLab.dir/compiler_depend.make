@@ -819,7 +819,7 @@ CMakeFiles/ImageLab.dir/main.cpp.o: /Users/bozidarapartenova/Documents/GitHub/Im
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Image.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/ImageManager.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/MyString.h \
-  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.h
+  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.hpp
 
 CMakeFiles/ImageLab.dir/src/BlurFilter.cpp.o: /Users/bozidarapartenova/Documents/GitHub/ImageLab/src/BlurFilter.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -1638,7 +1638,7 @@ CMakeFiles/ImageLab.dir/src/BlurFilter.cpp.o: /Users/bozidarapartenova/Documents
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Filter.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Image.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/MyString.h \
-  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.h
+  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.hpp
 
 CMakeFiles/ImageLab.dir/src/ContrastStretchingFilter.cpp.o: /Users/bozidarapartenova/Documents/GitHub/ImageLab/src/ContrastStretchingFilter.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -2457,7 +2457,7 @@ CMakeFiles/ImageLab.dir/src/ContrastStretchingFilter.cpp.o: /Users/bozidaraparte
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Filter.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Image.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/MyString.h \
-  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.h
+  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.hpp
 
 CMakeFiles/ImageLab.dir/src/Image.cpp.o: /Users/bozidarapartenova/Documents/GitHub/ImageLab/src/Image.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -3275,7 +3275,7 @@ CMakeFiles/ImageLab.dir/src/Image.cpp.o: /Users/bozidarapartenova/Documents/GitH
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Filter.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Image.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/MyString.h \
-  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.h
+  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.hpp
 
 CMakeFiles/ImageLab.dir/src/ImageManager.cpp.o: /Users/bozidarapartenova/Documents/GitHub/ImageLab/src/ImageManager.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -4103,7 +4103,7 @@ CMakeFiles/ImageLab.dir/src/ImageManager.cpp.o: /Users/bozidarapartenova/Documen
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/SharpenFilter.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/SobelFilter.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/ThresholdFilter.h \
-  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.h
+  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.hpp
 
 CMakeFiles/ImageLab.dir/src/NegativeFilter.cpp.o: /Users/bozidarapartenova/Documents/GitHub/ImageLab/src/NegativeFilter.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -4922,7 +4922,7 @@ CMakeFiles/ImageLab.dir/src/NegativeFilter.cpp.o: /Users/bozidarapartenova/Docum
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Image.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/MyString.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/NegativeFilter.h \
-  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.h
+  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.hpp
 
 CMakeFiles/ImageLab.dir/src/PBMImage.cpp.o: /Users/bozidarapartenova/Documents/GitHub/ImageLab/src/PBMImage.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -5761,7 +5761,7 @@ CMakeFiles/ImageLab.dir/src/PBMImage.cpp.o: /Users/bozidarapartenova/Documents/G
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Image.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/MyString.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/PBMImage.h \
-  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.h
+  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.hpp
 
 CMakeFiles/ImageLab.dir/src/PGMImage.cpp.o: /Users/bozidarapartenova/Documents/GitHub/ImageLab/src/PGMImage.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -6600,7 +6600,7 @@ CMakeFiles/ImageLab.dir/src/PGMImage.cpp.o: /Users/bozidarapartenova/Documents/G
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Image.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/MyString.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/PGMImage.h \
-  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.h
+  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.hpp
 
 CMakeFiles/ImageLab.dir/src/PPMImage.cpp.o: /Users/bozidarapartenova/Documents/GitHub/ImageLab/src/PPMImage.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -7439,7 +7439,7 @@ CMakeFiles/ImageLab.dir/src/PPMImage.cpp.o: /Users/bozidarapartenova/Documents/G
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Image.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/MyString.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/PPMImage.h \
-  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.h
+  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.hpp
 
 CMakeFiles/ImageLab.dir/src/SharpenFilter.cpp.o: /Users/bozidarapartenova/Documents/GitHub/ImageLab/src/SharpenFilter.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -8258,7 +8258,7 @@ CMakeFiles/ImageLab.dir/src/SharpenFilter.cpp.o: /Users/bozidarapartenova/Docume
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Image.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/MyString.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/SharpenFilter.h \
-  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.h
+  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.hpp
 
 CMakeFiles/ImageLab.dir/src/SobelFilter.cpp.o: /Users/bozidarapartenova/Documents/GitHub/ImageLab/src/SobelFilter.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -8443,6 +8443,7 @@ CMakeFiles/ImageLab.dir/src/SobelFilter.cpp.o: /Users/bozidarapartenova/Document
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/traits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/convert_to_timespec.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/duration.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/file_clock.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/high_resolution_clock.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/steady_clock.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/system_clock.h \
@@ -8497,6 +8498,22 @@ CMakeFiles/ImageLab.dir/src/SobelFilter.cpp.o: /Users/bozidarapartenova/Document
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__exception/nested_exception.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__exception/operations.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__exception/terminate.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_entry.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_iterator.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_options.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_status.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_time_type.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_type.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/filesystem_error.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/operations.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/perm_options.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/perms.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/space_info.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/enable_insertable.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/binary_function.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/binary_negate.h \
@@ -8883,9 +8900,12 @@ CMakeFiles/ImageLab.dir/src/SobelFilter.cpp.o: /Users/bozidarapartenova/Document
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/errno.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/exception \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/format \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
@@ -9077,7 +9097,7 @@ CMakeFiles/ImageLab.dir/src/SobelFilter.cpp.o: /Users/bozidarapartenova/Document
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Image.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/MyString.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/SobelFilter.h \
-  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.h
+  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.hpp
 
 CMakeFiles/ImageLab.dir/src/String.cpp.o: /Users/bozidarapartenova/Documents/GitHub/ImageLab/src/String.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -10711,7 +10731,7 @@ CMakeFiles/ImageLab.dir/src/ThresholdFilter.cpp.o: /Users/bozidarapartenova/Docu
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Image.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/MyString.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/ThresholdFilter.h \
-  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.h
+  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.hpp
 
 
 /Users/bozidarapartenova/Documents/GitHub/ImageLab/src/String.cpp:
@@ -10755,6 +10775,8 @@ CMakeFiles/ImageLab.dir/src/ThresholdFilter.cpp.o: /Users/bozidarapartenova/Docu
 /Users/bozidarapartenova/Documents/GitHub/ImageLab/src/Image.cpp:
 
 /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/ContrastStretchingFilter.h:
+
+/Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.hpp:
 
 /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/MyString.h:
 
@@ -11263,8 +11285,6 @@ CMakeFiles/ImageLab.dir/src/ThresholdFilter.cpp.o: /Users/bozidarapartenova/Docu
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_arithmetic.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_always_bitcastable.h:
-
-/Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_allocator.h:
 

@@ -815,7 +815,7 @@ CMakeFiles/ImageLab.dir/src/PBMImage.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/stack.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/print \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h \
-  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.h \
+  /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.hpp \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Filter.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path.h \

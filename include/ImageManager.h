@@ -10,7 +10,7 @@ private:
     Vector<Image *> images;
 
     int findImageIndex(const String &name) const;
-    Filter *createFilterByName(const String &name) const;
+    Filter *createFilterByName(const String &name, int sobelThreshold = -1) const;
 
 public:
     ImageManager();
