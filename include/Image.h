@@ -1,8 +1,7 @@
-#ifndef IMAGE_H
-#define IMAGE_H
+#pragma once
 
 #include "MyString.h"
-#include "Vector.h"
+#include "Vector.hpp"
 #include "Filter.h"
 
 struct Pixel
@@ -42,5 +41,3 @@ public:
     virtual Pixel getPixel(int x, int y) const = 0;
     virtual void setPixel(int x, int y, const Pixel &p) = 0;
 };
-
-#endif

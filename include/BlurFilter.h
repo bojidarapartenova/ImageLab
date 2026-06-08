@@ -1,5 +1,4 @@
-#ifndef BLURFILTER_H
-#define BLURFILTER_H
+#pragma once
 
 #include "Filter.h"
 #include "Image.h"
@@ -11,5 +10,3 @@ public:
 
     String getName() const override;
 };
-
-#endif

@@ -40,9 +40,9 @@ void ContrastStretchingFilter::apply(Image &image) const
         {
             Pixel p = image.getPixel(x, y);
 
-            int r = (int)((p.r - minLum) * scale);
-            int g = (int)((p.g - minLum) * scale);
-            int b = (int)((p.b - minLum) * scale);
+            int r = (int)((p.r - minLum) * scale + 0.5);
+            int g = (int)((p.g - minLum) * scale + 0.5);
+            int b = (int)((p.b - minLum) * scale + 0.5);
 
             if (r < 0)
             {
@@ -76,5 +76,5 @@ void ContrastStretchingFilter::apply(Image &image) const
 
 String ContrastStretchingFilter::getName() const
 {
-    return "contrast stretching";
+    return "contrast-stretching";
 }

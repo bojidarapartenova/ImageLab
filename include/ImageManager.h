@@ -1,7 +1,6 @@
-#ifndef IMAGEMANAGER_H
-#define IMAGEMANAGER_H
+#pragma once
 
-#include "Vector.h"
+#include "Vector.hpp"
 #include "MyString.h"
 #include "Image.h"
 
@@ -27,5 +26,3 @@ public:
     void save(const String &imageName, const String &outputName = "");
     void clearAll();
 };
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef SHARPENFILTER_H
-#define SHARPENFILTER_H
+#pragma once
 
 #include "Filter.h"
 #include "Image.h"
@@ -10,5 +9,3 @@ class SharpenFilter : public Filter
 
     String getName() const override;
 };
-
-#endif

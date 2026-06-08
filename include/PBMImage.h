@@ -1,5 +1,4 @@
-#ifndef PBMIMAGE_H
-#define PBMIMAGE_H
+#pragma once
 
 #include "Image.h"
 
@@ -17,5 +16,3 @@ public:
     Pixel getPixel(int x, int y) const override;
     void setPixel(int x, int y, const Pixel &p) override;
 };
-
-#endif

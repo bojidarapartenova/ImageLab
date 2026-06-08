@@ -1,5 +1,4 @@
-#ifndef STRING_H
-#define STRING_H
+#pragma once
 #include <iostream>
 
 class String
@@ -29,5 +28,3 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const String &str);
 };
-
-#endif

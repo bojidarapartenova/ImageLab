@@ -1,5 +1,4 @@
-#ifndef THRESHOLDFILTER_H
-#define THRESHOLDFILTER_H
+#pragma once
 
 #include "Filter.h"
 #include "Image.h"
@@ -16,5 +15,3 @@ public:
 
     String getName() const override;
 };
-
-#endif

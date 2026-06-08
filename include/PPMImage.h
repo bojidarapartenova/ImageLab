@@ -1,5 +1,4 @@
-#ifndef PPMIMAGE_H
-#define PPMIMAGE_H
+#pragma once
 
 #include "Image.h"
 
@@ -17,5 +16,3 @@ public:
     virtual Pixel getPixel(int x, int y) const override;
     virtual void setPixel(int x, int y, const Pixel &p) override;
 };
-
-#endif

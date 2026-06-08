@@ -1,5 +1,4 @@
-#ifndef CONTRASTSTRETCHINGFILTER_H
-#define CONTRASTSTRETCHINGFILTER_H
+#pragma once
 
 #include "Filter.h"
 #include "Image.h"
@@ -10,5 +9,3 @@ class ContrastStretchingFilter : public Filter
 
     String getName() const override;
 };
-
-#endif

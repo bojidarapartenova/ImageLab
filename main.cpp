@@ -6,7 +6,7 @@
 int main()
 {
     ImageManager manager;
-    std::string line; // Използваме std::string за по-лесно четене на редове
+    std::string line;
 
     std::cout << "--- Image Processing System ---" << std::endl;
     std::cout << "Available commands: load, add-filter, remove-filter, show-filters, show-all-filters, run, run-all, save, quit" << std::endl;
@@ -15,15 +15,18 @@ int main()
     {
         std::cout << "\n> ";
         if (!std::getline(std::cin, line))
+        {
             break;
+        }
 
-        // Ако потребителят е натиснал просто Enter без да пише нищо, прескачаме
         if (line.empty())
+        {
             continue;
+        }
 
         std::stringstream ss(line);
         std::string cmdStr;
-        ss >> cmdStr; // Вземаме първата дума (командата)
+        ss >> cmdStr;
 
         String cmd(cmdStr.c_str());
 

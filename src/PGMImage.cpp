@@ -46,7 +46,6 @@ void PGMImage::save(const String &customPath) const
     {
         for (int x = 0; x < width; x++)
         {
-            // Твърдо печатаме числото последвано ОТИЧНО от интервал!
             file << pixels[y][x] << " ";
         }
         file << "\n";

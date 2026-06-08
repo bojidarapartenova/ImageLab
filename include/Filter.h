@@ -1,5 +1,4 @@
-#ifndef FILTER_H
-#define FILTER_H
+#pragma once
 
 #include "MyString.h"
 
@@ -12,4 +11,3 @@ public:
     virtual String getName() const = 0;
     virtual ~Filter() = default;
 };
-#endif
