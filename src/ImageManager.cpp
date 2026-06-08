@@ -119,7 +119,7 @@ void ImageManager::load(const String &path)
     }
 }
 
-void ImageManager::addFilter(const String &imageName, const String &filterType)
+void ImageManager::addFilter(const String &imageName, const String &filterType, int sobelThreshold)
 {
     int idx = findImageIndex(imageName);
     if (idx == -1)

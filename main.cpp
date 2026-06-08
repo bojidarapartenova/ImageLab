@@ -1,6 +1,7 @@
 #include <iostream>
-#include "ImageManager.h"
-#include "MyString.h"
+#include "include/ImageManager.h"
+#include "include/MyString.h"
+#include <cstring>
 
 int main()
 {
