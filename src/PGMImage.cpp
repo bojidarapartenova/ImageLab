@@ -56,6 +56,15 @@ void PGMImage::save(const String &customPath) const
 
 Pixel PGMImage::getPixel(int x, int y) const
 {
+    if (x < 0)
+        x = 0;
+    if (y < 0)
+        y = 0;
+    if (x >= width)
+        x = width - 1;
+    if (y >= height)
+        y = height - 1;
+
     int value = pixels[y][x];
     return Pixel(value, value, value);
 }

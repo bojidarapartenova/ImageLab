@@ -68,6 +68,13 @@ void SharpenFilter::apply(Image &image) const
             {
                 b = maxVal;
             }
+
+            Pixel newPixel;
+            newPixel.r = (unsigned char)r;
+            newPixel.g = (unsigned char)g;
+            newPixel.b = (unsigned char)b;
+
+            image.setPixel(x, y, newPixel);
         }
     }
 }

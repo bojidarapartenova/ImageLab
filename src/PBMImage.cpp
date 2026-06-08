@@ -48,7 +48,6 @@ void PBMImage::save(const String &customPath) const
     {
         for (int x = 0; x < width; x++)
         {
-            // Твърдо печатаме бита последван от интервал!
             file << pixels[y][x] << " ";
         }
         file << "\n";
@@ -58,18 +57,11 @@ void PBMImage::save(const String &customPath) const
 
 Pixel PBMImage::getPixel(int x, int y) const
 {
-    int value = pixels[y][x] * 255;
+    int value = 1 - pixels[y][x];
     return Pixel(value, value, value);
 }
 
 void PBMImage::setPixel(int x, int y, const Pixel &p)
 {
-    if (p.r == 0 || p.r == 254)
-    {
-        pixels[y][x] = 0;
-    }
-    else
-    {
-        pixels[y][x] = 1;
-    }
+    pixels[y][x] = (p.r > 0) ? 0 : 1;
 }
