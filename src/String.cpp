@@ -109,7 +109,7 @@ bool String::operator==(const char *other) const
     }
 
     size_t i = 0;
-    while (other[i] != '\0')
+    while (data[i] != '\0' && other[i] != '\0')
     {
         if (data[i] != other[i])
         {
@@ -117,6 +117,7 @@ bool String::operator==(const char *other) const
         }
         i++;
     }
+
     return data[i] == other[i];
 }
 
