@@ -38,7 +38,7 @@ void PGMImage::save(const String &customPath) const
         return;
     }
 
-    file << "P2" << "\n";
+    file << "P2\n";
     file << width << " " << height << "\n";
     file << maxVal << "\n";
 
@@ -46,12 +46,8 @@ void PGMImage::save(const String &customPath) const
     {
         for (int x = 0; x < width; x++)
         {
-            file << pixels[y][x];
-
-            if (x < width - 1)
-            {
-                file << "";
-            }
+            // Твърдо печатаме числото последвано ОТИЧНО от интервал!
+            file << pixels[y][x] << " ";
         }
         file << "\n";
     }

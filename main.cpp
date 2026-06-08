@@ -1,12 +1,12 @@
 #include <iostream>
+#include <sstream>
 #include "include/ImageManager.h"
 #include "include/MyString.h"
-#include <cstring>
 
 int main()
 {
     ImageManager manager;
-    char command[100];
+    std::string line; // Използваме std::string за по-лесно четене на редове
 
     std::cout << "--- Image Processing System ---" << std::endl;
     std::cout << "Available commands: load, add-filter, remove-filter, show-filters, show-all-filters, run, run-all, save, quit" << std::endl;
@@ -14,35 +14,67 @@ int main()
     while (true)
     {
         std::cout << "\n> ";
-        if (!(std::cin >> command))
+        if (!std::getline(std::cin, line))
             break;
 
-        String cmd(command);
+        // Ако потребителят е натиснал просто Enter без да пише нищо, прескачаме
+        if (line.empty())
+            continue;
+
+        std::stringstream ss(line);
+        std::string cmdStr;
+        ss >> cmdStr; // Вземаме първата дума (командата)
+
+        String cmd(cmdStr.c_str());
 
         if (cmd == "load")
         {
-            char path[256];
-            std::cin >> path;
-            manager.load(path);
+            std::string path;
+            if (ss >> path)
+            {
+                manager.load(path.c_str());
+            }
+            else
+            {
+                std::cout << "Error: Missing path for 'load' command." << std::endl;
+            }
         }
         else if (cmd == "add-filter")
         {
-            char imgName[256], filterType[64];
-            std::cin >> imgName >> filterType;
-            manager.addFilter(imgName, filterType);
+            std::string imgName, filterType;
+            if (ss >> imgName >> filterType)
+            {
+                manager.addFilter(imgName.c_str(), filterType.c_str());
+            }
+            else
+            {
+                std::cout << "Error: Usage: add-filter <image_name> <filter_type>" << std::endl;
+            }
         }
         else if (cmd == "remove-filter")
         {
-            char imgName[256];
+            std::string imgName;
             int fIdx;
-            std::cin >> imgName >> fIdx;
-            manager.removeFilter(imgName, fIdx);
+            if (ss >> imgName >> fIdx)
+            {
+                manager.removeFilter(imgName.c_str(), fIdx);
+            }
+            else
+            {
+                std::cout << "Error: Usage: remove-filter <image_name> <filter_index>" << std::endl;
+            }
         }
         else if (cmd == "show-filters")
         {
-            char imgName[256];
-            std::cin >> imgName;
-            manager.showFilters(imgName);
+            std::string imgName;
+            if (ss >> imgName)
+            {
+                manager.showFilters(imgName.c_str());
+            }
+            else
+            {
+                std::cout << "Error: Missing image name for 'show-filters'." << std::endl;
+            }
         }
         else if (cmd == "show-all-filters")
         {
@@ -50,9 +82,15 @@ int main()
         }
         else if (cmd == "run")
         {
-            char imgName[256];
-            std::cin >> imgName;
-            manager.run(imgName);
+            std::string imgName;
+            if (ss >> imgName)
+            {
+                manager.run(imgName.c_str());
+            }
+            else
+            {
+                std::cout << "Error: Missing image name for 'run'." << std::endl;
+            }
         }
         else if (cmd == "run-all")
         {
@@ -60,9 +98,15 @@ int main()
         }
         else if (cmd == "save")
         {
-            char imgName[256], outName[256];
-            std::cin >> imgName >> outName;
-            manager.save(imgName, outName);
+            std::string imgName, outName;
+            if (ss >> imgName >> outName)
+            {
+                manager.save(imgName.c_str(), outName.c_str());
+            }
+            else
+            {
+                std::cout << "Error: Usage: save <image_name> <output_name>" << std::endl;
+            }
         }
         else if (cmd == "quit")
         {
@@ -71,8 +115,7 @@ int main()
         }
         else
         {
-            std::cout << "Unknown command: " << command << std::endl;
-            std::cin.ignore(1000, '\n');
+            std::cout << "Unknown command: " << cmdStr << std::endl;
         }
     }
 

@@ -812,6 +812,7 @@ CMakeFiles/ImageLab.dir/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/stack.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/print \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/ImageManager.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/Vector.h \
   /Users/bozidarapartenova/Documents/GitHub/ImageLab/include/MyString.h \

@@ -33,22 +33,23 @@ void PBMImage::load()
 
 void PBMImage::save(const String &customPath) const
 {
-    const char *path = (customPath.getSize() > 0) ? (customPath.getData()) : filePath.getData();
-    std::ofstream file(path);
+    const char *path = (customPath.getSize() > 0) ? customPath.getData() : filePath.getData();
 
+    std::ofstream file(path);
     if (!file.is_open())
     {
         return;
     }
 
-    file << "P1" << "\n";
+    file << "P1\n";
     file << width << " " << height << "\n";
 
     for (int y = 0; y < height; y++)
     {
         for (int x = 0; x < width; x++)
         {
-            file << pixels[y][x];
+            // Твърдо печатаме бита последван от интервал!
+            file << pixels[y][x] << " ";
         }
         file << "\n";
     }
@@ -63,5 +64,12 @@ Pixel PBMImage::getPixel(int x, int y) const
 
 void PBMImage::setPixel(int x, int y, const Pixel &p)
 {
-    pixels[y][x] = (p.r > 127) ? 1 : 0;
+    if (p.r == 0 || p.r == 254)
+    {
+        pixels[y][x] = 0;
+    }
+    else
+    {
+        pixels[y][x] = 1;
+    }
 }

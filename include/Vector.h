@@ -2,6 +2,7 @@
 #define VECTOR_H
 
 #include <iostream>
+#include <utility>
 
 template <typename T>
 class Vector
@@ -12,7 +13,7 @@ private:
     size_t capacity;
 
     void copyFrom(const Vector<T> &other);
-    void moveFrom(Vector<T> &&other);
+    void moveFrom(Vector<T> &&other) noexcept;
     void free();
     void resize();
 
@@ -27,6 +28,7 @@ public:
     void push_back(const T &element);
     void push_back(T &&element);
     void pop_at(size_t index);
+    void reserve(size_t newCapacity);
 
     T &operator[](size_t index);
     const T &operator[](size_t index) const;
@@ -40,7 +42,7 @@ inline void Vector<T>::copyFrom(const Vector<T> &other)
 {
     size = other.size;
     capacity = other.capacity;
-    data = new T[capacity];
+    data = (capacity > 0) ? new T[capacity] : nullptr;
     for (size_t i = 0; i < size; i++)
     {
         data[i] = other.data[i];
@@ -48,7 +50,7 @@ inline void Vector<T>::copyFrom(const Vector<T> &other)
 }
 
 template <typename T>
-inline void Vector<T>::moveFrom(Vector<T> &&other)
+inline void Vector<T>::moveFrom(Vector<T> &&other) noexcept
 {
     data = other.data;
     size = other.size;
@@ -64,12 +66,25 @@ inline void Vector<T>::free()
 {
     delete[] data;
     data = nullptr;
+    size = 0;
+    capacity = 0;
 }
 
 template <typename T>
 inline void Vector<T>::resize()
 {
     size_t newCapacity = (capacity == 0) ? 2 : capacity * 2;
+    reserve(newCapacity);
+}
+
+template <typename T>
+inline void Vector<T>::reserve(size_t newCapacity)
+{
+    if (newCapacity <= capacity)
+    {
+        return;
+    }
+
     T *newData = new T[newCapacity];
     for (size_t i = 0; i < size; i++)
     {
@@ -84,13 +99,13 @@ template <typename T>
 inline Vector<T>::Vector() : data(nullptr), size(0), capacity(0) {}
 
 template <typename T>
-inline Vector<T>::Vector(const Vector<T> &other)
+inline Vector<T>::Vector(const Vector<T> &other) : data(nullptr), size(0), capacity(0)
 {
     copyFrom(other);
 }
 
 template <typename T>
-inline Vector<T>::Vector(Vector<T> &&other) noexcept
+inline Vector<T>::Vector(Vector<T> &&other) noexcept : data(nullptr), size(0), capacity(0)
 {
     moveFrom(std::move(other));
 }
@@ -146,9 +161,11 @@ inline void Vector<T>::push_back(T &&element)
 template <typename T>
 inline void Vector<T>::pop_at(size_t index)
 {
+    if (index >= size)
+        return;
     for (size_t i = index; i < size - 1; i++)
     {
-        data[i] = data[i + 1];
+        data[i] = std::move(data[i + 1]);
     }
     size--;
 }
