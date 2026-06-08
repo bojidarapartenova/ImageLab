@@ -14,7 +14,11 @@ void SobelFilter::apply(Image &image) const
         for (int x = 0; x < width; x++)
         {
             Pixel p = image.getPixel(x, y);
-            row.push_back((int)(0.299 * p.r + 0.587 * p.g + 0.114 * p.b));
+            int maxVal = image.getMaxVal();
+            int r = (maxVal > 0) ? (p.r * 255 / maxVal) : p.r;
+            int g = (maxVal > 0) ? (p.g * 255 / maxVal) : p.g;
+            int b = (maxVal > 0) ? (p.b * 255 / maxVal) : p.b;
+            row.push_back((int)(0.299 * r + 0.587 * g + 0.114 * b));
         }
         grayMap.push_back(std::move(row));
     }
